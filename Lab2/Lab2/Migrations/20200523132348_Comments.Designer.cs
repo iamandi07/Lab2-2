@@ -4,14 +4,16 @@ using Lab2.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lab2.Migrations
 {
     [DbContext(typeof(ExpensesContext))]
-    partial class ExpensesContextModelSnapshot : ModelSnapshot
+    [Migration("20200523132348_Comments")]
+    partial class Comments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +38,7 @@ namespace Lab2.Migrations
 
                     b.HasIndex("ExpensesId");
 
-                    b.ToTable("Comment_1");
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("Lab2.Models.Expenses", b =>

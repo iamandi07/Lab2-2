@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab2.Models
 {
-    public class SeedData
+    public static class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
@@ -22,7 +22,6 @@ namespace Lab2.Models
                 context.ExpensesClasses.AddRange(
                     new Expenses
                     {
-                        Id = 1,
                         Description = "apple",
                         Sum = 25.25,
                         Location = "Kaufland",
@@ -31,6 +30,19 @@ namespace Lab2.Models
                         Type = "food",
                         Importance = Importance.low,
                         Status = Status.optional
+                    },
+
+                    new Expenses
+                    {
+                   
+                        Description = "electricity",
+                        Sum = 30,
+                        Location = "Electrica",
+                        Date = DateTime.Now,
+                        Currency = "ron",
+                        Type = "others",
+                        Importance = Importance.high,
+                        Status = Status.always
                     }
                 );
                 context.SaveChanges();
